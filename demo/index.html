@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="fb-theme" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shared visual styles demo</title>
+    <link rel="stylesheet" href="../src/forging-blocks-core.css">
+    <link rel="stylesheet" href="../src/forging-blocks-mermaid.css">
+    <link rel="stylesheet" href="../src/forging-blocks-floating-menu.css">
+    <style>
+      html { min-height: 100%; }
+      body { margin: 0; font: 16px/1.6 Roboto, "Segoe UI", sans-serif; }
+      .demo-shell { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 8rem; }
+      .demo-kicker { color: var(--fb-fg-muted); letter-spacing: .08em; text-transform: uppercase; }
+      .demo-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, .45fr); gap: 1.5rem; }
+      .demo-panel { border: 1px solid var(--fb-border); padding: 1rem; background: var(--fb-bg-root); }
+      @media (max-width: 48rem) { .demo-grid { grid-template-columns: 1fr; } }
+      .demo-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+      .demo-nav a { border: 1px solid var(--fb-border); padding: .4rem .7rem; color: var(--fb-fg-soft); text-decoration: none; }
+      .demo-nav a:hover, .demo-nav a[aria-current="page"] { background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+      .demo-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
+      .fb-prose .demo-card { display: block; border: 1px solid var(--fb-border); background: var(--fb-bg-surface); padding: 1rem; color: var(--fb-fg-primary); text-decoration: none; }
+      .fb-prose .demo-card:hover { border-color: var(--fb-accent-orange); background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+    </style>
+  </head>
+  <body>
+    <nav class="demo-nav" aria-label="Component gallery">
+      <a href="index.html" aria-current="page">Gallery</a>
+      <a href="content.html">Content</a>
+      <a href="navigation.html">Navigation</a>
+      <a href="diagrams.html">Diagrams</a>
+      <a href="mkdocs.html">MkDocs</a>
+    </nav>
+    <main class="demo-shell fb-prose">
+      <p class="demo-kicker">Framework-neutral fixture</p>
+      <h1>Shared warm-dark documentation</h1>
+      <p>Explore the visual contracts by component. Each page is a neutral static fixture using the source styles under <code>src/</code>.</p>
+      <div class="demo-cards">
+        <a class="demo-card" href="content.html"><strong>Content</strong><br>Prose, code, tables, callouts, and details.</a>
+        <a class="demo-card" href="navigation.html"><strong>Navigation</strong><br>Tabs, sidebars, states, and floating menus.</a>
+        <a class="demo-card" href="diagrams.html"><strong>Diagrams</strong><br>Rendered Mermaid nodes, paths, and clusters.</a>
+        <a class="demo-card" href="mkdocs.html"><strong>MkDocs</strong><br>Material and mkdocstrings-shaped markup.</a>
+      </div>
+      <p>This page exercises <a href="#details">links</a>, <code>inline code</code>, bordered surfaces, and the optional adapters without any site-specific branding.</p>
+
+      <div class="demo-grid">
+        <section>
+          <h2>Content surfaces</h2>
+          <pre><code>def greet(name: str) -&gt; str:
+    return f"Hello, {name}"</code></pre>
+
+          <table>
+            <thead><tr><th>Surface</th><th>State</th></tr></thead>
+            <tbody><tr><td>Code</td><td>Warm and bordered</td></tr><tr><td>Interaction</td><td>Yellow accent</td></tr></tbody>
+          </table>
+
+          <blockquote>Flat surfaces and clear borders keep the documentation readable in a dark environment.</blockquote>
+
+          <aside class="fb-note">
+            <div class="fb-note__title">Note</div>
+            <p>Callouts use the orange structural accent and square corners.</p>
+          </aside>
+
+          <details id="details" class="fb-details" open>
+            <summary>Example details</summary>
+            <p>Details summaries use the hover surface and orange label.</p>
+          </details>
+
+          <details class="fb-details--source" open>
+            <summary>Show source</summary>
+            <pre><code>source = "local fixture"</code></pre>
+          </details>
+        </section>
+
+        <section>
+          <h2>Line-number treatment</h2>
+          <table class="fb-highlighttable">
+            <tbody><tr>
+              <td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td>
+              <td class="code"><pre><code>from pathlib import Path
+
+Path("docs").mkdir(exist_ok=True)</code></pre></td>
+            </tr></tbody>
+          </table>
+
+          <h2>Mermaid-like output</h2>
+          <div class="mermaid" aria-label="A small rendered diagram">
+            <svg viewBox="0 0 420 180" role="img">
+              <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z"></path></marker></defs>
+              <g class="cluster">
+                <rect x="18" y="18" width="384" height="144" rx="6" ry="6"></rect>
+                <text x="34" y="44">Documentation flow</text>
+                <g transform="translate(48 72)">
+                  <rect width="130" height="48" class="highlighted"></rect><text x="18" y="29">Source</text>
+                </g>
+                <g transform="translate(242 72)">
+                  <rect width="130" height="48"></rect><text x="18" y="29">Published</text>
+                </g>
+                <g class="highlighted"><path d="M178 96 H242" marker-end="url(#arrow)"></path></g>
+              </g>
+            </svg>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <nav class="fb-floating-menu" aria-label="Available releases">
+      <button class="fb-floating-menu__button" type="button" aria-expanded="true">
+        Release <span class="fb-floating-menu__arrow" aria-hidden="true">⌄</span>
+      </button>
+      <ul class="fb-floating-menu__list">
+        <li><a class="fb-floating-menu__item fb-floating-menu__item--current" href="#details" aria-current="page">Current release</a></li>
+        <li><a class="fb-floating-menu__item" href="#details">Previous release</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
