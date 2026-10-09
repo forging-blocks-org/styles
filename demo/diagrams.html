@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="fb-theme" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diagram components | Shared visual styles</title>
+    <link rel="stylesheet" href="../src/forging-blocks-core.css">
+    <link rel="stylesheet" href="../src/forging-blocks-mermaid.css">
+    <style>
+      html { min-height: 100%; }
+      body { margin: 0; font: 16px/1.6 Roboto, "Segoe UI", sans-serif; }
+      .demo-shell { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+      .demo-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+      .demo-nav a { border: 1px solid var(--fb-border); padding: .4rem .7rem; color: var(--fb-fg-soft); text-decoration: none; }
+      .demo-nav a:hover, .demo-nav a[aria-current="page"] { background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+      .diagram-card { border: 1px solid var(--fb-border); background: var(--fb-bg-surface); padding: 1rem; }
+      .diagram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      @media (max-width: 48rem) { .diagram-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main class="demo-shell fb-prose">
+      <nav class="demo-nav" aria-label="Component gallery">
+        <a href="index.html">Gallery</a><a href="content.html">Content</a><a href="navigation.html">Navigation</a>
+        <a href="diagrams.html" aria-current="page">Diagrams</a><a href="mkdocs.html">MkDocs</a>
+      </nav>
+      <p style="color: var(--fb-fg-muted); letter-spacing: .08em; text-transform: uppercase;">Mermaid adapter</p>
+      <h1>Diagram components</h1>
+      <p>These SVG fixtures represent rendered Mermaid output. The stylesheet colors the markup but does not load Mermaid or initialize a renderer.</p>
+      <div class="diagram-grid">
+        <section class="diagram-card"><h2>Flow nodes</h2><div class="mermaid" aria-label="Flow diagram"><svg viewBox="0 0 440 180" role="img"><defs><marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z"></path></marker></defs><g><rect x="20" y="65" width="130" height="50"></rect><text x="48" y="95">Input</text></g><g class="highlighted"><rect x="290" y="65" width="130" height="50" class="highlighted"></rect><text x="315" y="95">Output</text></g><g class="highlighted"><path d="M150 90 H290" marker-end="url(#flow-arrow)"></path></g></svg></div></section>
+        <section class="diagram-card"><h2>Clusters</h2><div class="mermaid" aria-label="Cluster diagram"><svg viewBox="0 0 440 220" role="img"><defs><marker id="cluster-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z"></path></marker></defs><g class="cluster"><rect x="15" y="15" width="410" height="190"></rect><text x="34" y="42">Pipeline</text><g transform="translate(45 75)"><rect width="140" height="52"></rect><text x="35" y="106">Parse</text></g><g transform="translate(245 75)"><rect width="140" height="52"></rect><text x="28" y="106">Publish</text></g><g class="highlighted"><path d="M185 101 H245" marker-end="url(#cluster-arrow)"></path></g></g></svg></div></section>
+      </div>
+      <h2>Styling contract</h2>
+      <ul><li>Nodes use the elevated surface and neutral border.</li><li>Clusters use the root background and orange structural border.</li><li>Highlighted paths use the orange accent and a thicker stroke.</li><li>Cluster labels use the yellow accent.</li></ul>
+    </main>
+  </body>
+</html>
