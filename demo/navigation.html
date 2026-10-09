@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="fb-theme" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Navigation components | Shared visual styles</title>
+    <link rel="stylesheet" href="../src/forging-blocks-core.css">
+    <link rel="stylesheet" href="../src/forging-blocks-floating-menu.css">
+    <style>
+      html { min-height: 100%; }
+      body { margin: 0; font: 16px/1.6 Roboto, "Segoe UI", sans-serif; }
+      .demo-shell { max-width: 80rem; margin: 0 auto; padding: 2rem 1.5rem 8rem; }
+      .demo-nav, .demo-tabs { display: flex; flex-wrap: wrap; gap: .5rem; }
+      .demo-nav { margin-bottom: 2rem; }
+      .demo-nav a, .demo-tabs a { border: 1px solid var(--fb-border); padding: .4rem .7rem; color: var(--fb-fg-soft); text-decoration: none; }
+      .demo-nav a:hover, .demo-nav a[aria-current="page"], .demo-tabs a:hover, .demo-tabs a[aria-selected="true"] { background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+      .demo-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr) 13rem; gap: 1rem; }
+      .demo-sidebar, .demo-content { border: 1px solid var(--fb-border); background: var(--fb-bg-root); padding: 1rem; }
+      .demo-sidebar a { display: block; padding: .45rem .6rem; color: var(--fb-fg-soft); text-decoration: none; }
+      .demo-sidebar a:hover, .demo-sidebar a[aria-current="page"] { background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+      .demo-source { background: var(--fb-accent-orange); color: var(--fb-fg-primary); padding: .5rem; margin-bottom: 1rem; }
+      .demo-source a { color: inherit; }
+      .menu-demo { display: flex; flex-wrap: wrap; gap: 3rem; align-items: start; margin-top: 2rem; }
+      @media (max-width: 52rem) { .demo-layout { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main class="demo-shell">
+      <nav class="demo-nav" aria-label="Component gallery">
+        <a href="index.html">Gallery</a><a href="content.html">Content</a>
+        <a href="navigation.html" aria-current="page">Navigation</a><a href="diagrams.html">Diagrams</a><a href="mkdocs.html">MkDocs</a>
+      </nav>
+      <p style="color: var(--fb-fg-muted); letter-spacing: .08em; text-transform: uppercase;">Core and floating-menu contracts</p>
+      <h1 style="color: var(--fb-accent-orange);">Navigation components</h1>
+      <p style="color: var(--fb-fg-primary);">These controls are static markup examples; the library does not provide interaction JavaScript.</p>
+      <nav class="demo-tabs" aria-label="Section tabs"><a href="#overview" aria-selected="true">Overview</a><a href="#states">States</a><a href="#source">Source</a></nav>
+      <div class="demo-layout" style="margin-top: 1.5rem;">
+        <aside class="demo-sidebar"><div class="demo-source"><a href="#source">Source block</a></div><a href="#overview" aria-current="page">Overview</a><a href="#states">Navigation states</a><a href="#source">Repository</a></aside>
+        <section id="overview" class="demo-content">
+          <h2 style="color: var(--fb-accent-orange);">Header and navigation states</h2>
+          <p style="color: var(--fb-fg-primary);">The active link uses the hover surface and yellow accent. Secondary links can use muted text until focused.</p>
+          <h2 id="states" style="color: var(--fb-accent-orange);">Floating menu states</h2>
+          <div class="menu-demo">
+            <div class="fb-floating-menu" style="position: relative; inset: auto;"><button class="fb-floating-menu__button" type="button" aria-expanded="true">Expanded <span class="fb-floating-menu__arrow" aria-hidden="true">⌄</span></button><ul class="fb-floating-menu__list"><li><a class="fb-floating-menu__item fb-floating-menu__item--current" href="#states">Current</a></li><li><a class="fb-floating-menu__item" href="#source">Previous</a></li></ul></div>
+            <div class="fb-floating-menu" style="position: relative; inset: auto;"><button class="fb-floating-menu__button" type="button" aria-expanded="false">Collapsed <span class="fb-floating-menu__arrow" aria-hidden="true">⌄</span></button><ul class="fb-floating-menu__list"><li><a class="fb-floating-menu__item" href="#states">Hidden item</a></li></ul></div>
+          </div>
+          <p id="source" style="color: var(--fb-fg-muted);">Use keyboard Tab to inspect the orange focus-visible outline.</p>
+        </section>
+        <aside class="demo-sidebar"><h2 style="color: var(--fb-accent-orange); font-size: 1rem;">On this page</h2><a href="#overview" aria-current="page">Overview</a><a href="#states">States</a><a href="#source">Source</a></aside>
+      </div>
+    </main>
+  </body>
+</html>
