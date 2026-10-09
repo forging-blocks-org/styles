@@ -1,0 +1,54 @@
+.mermaid {
+  background-color: var(--fb-bg-root);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.mermaid rect {
+  fill: var(--fb-bg-elevated);
+  stroke: var(--fb-border-neutral);
+  stroke-width: 2px;
+  rx: 6px;
+  ry: 6px;
+}
+
+.mermaid text {
+  fill: var(--fb-fg-primary);
+}
+
+.mermaid path {
+  stroke: var(--fb-fg-muted);
+  stroke-width: 2px;
+}
+
+.mermaid marker path {
+  fill: var(--fb-fg-muted);
+}
+
+.mermaid rect.highlighted {
+  stroke: var(--fb-accent-orange-dark);
+}
+
+.mermaid .highlighted path {
+  stroke: var(--fb-accent-orange);
+  stroke-width: 3px;
+}
+
+.mermaid .cluster > rect {
+  fill: var(--fb-bg-root);
+  stroke: var(--fb-accent-red);
+}
+
+.mermaid .cluster text {
+  fill: var(--fb-accent-yellow);
+}
+
+.mermaid g:hover rect {
+  fill: var(--fb-bg-hover);
+}
+
+.mermaid g:hover path {
+  stroke: var(--fb-accent-yellow);
+}
