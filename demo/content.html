@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="fb-theme" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content components | Shared visual styles</title>
+    <link rel="stylesheet" href="../src/forging-blocks-core.css">
+    <style>
+      html { min-height: 100%; }
+      body { margin: 0; font: 16px/1.6 Roboto, "Segoe UI", sans-serif; }
+      .demo-shell { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+      .demo-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+      .demo-nav a { border: 1px solid var(--fb-border); padding: .4rem .7rem; color: var(--fb-fg-soft); text-decoration: none; }
+      .demo-nav a:hover, .demo-nav a[aria-current="page"] { background: var(--fb-bg-hover); color: var(--fb-accent-yellow); }
+      .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+      .demo-panel { border: 1px solid var(--fb-border); background: var(--fb-bg-root); padding: 1rem; }
+      @media (max-width: 48rem) { .demo-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main class="demo-shell fb-prose">
+      <nav class="demo-nav" aria-label="Component gallery">
+        <a href="index.html">Gallery</a><a href="content.html" aria-current="page">Content</a>
+        <a href="navigation.html">Navigation</a><a href="diagrams.html">Diagrams</a><a href="mkdocs.html">MkDocs</a>
+      </nav>
+      <p style="color: var(--fb-fg-muted); letter-spacing: .08em; text-transform: uppercase;">Core contract</p>
+      <h1>Content components</h1>
+      <p>Use this page to compare the generic prose hooks on a plain static document.</p>
+      <div class="demo-grid">
+        <section class="demo-panel">
+          <h2>Text and code</h2>
+          <p>Links use the orange-dark accent, while <code>inline code</code> uses the yellow interaction accent.</p>
+          <pre><code>class Theme:
+    palette = "warm-dark"
+    framework = None</code></pre>
+          <blockquote>Readable documentation needs strong hierarchy without excessive ornament.</blockquote>
+        </section>
+        <section class="demo-panel">
+          <h2>Tables</h2>
+          <table><thead><tr><th>Component</th><th>Surface</th></tr></thead><tbody><tr><td>Heading</td><td>Orange</td></tr><tr><td>Inline code</td><td>Yellow</td></tr><tr><td>Body copy</td><td>Primary</td></tr></tbody></table>
+          <h2>Line numbers</h2>
+          <table class="fb-highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><pre><code>result = render(
+    content,
+    theme="fb",
+)</code></pre></td></tr></tbody></table>
+        </section>
+      </div>
+      <h2>Callouts and details</h2>
+      <aside class="fb-note"><div class="fb-note__title">Note</div><p>Notes use a structural orange border, flat surface, and square corners.</p></aside>
+      <details class="fb-details" open><summary>Expanded details</summary><p>The summary gets the hover surface and orange label treatment.</p></details>
+      <details class="fb-details--source" open><summary>Source details</summary><pre><code>source = "component gallery"</code></pre></details>
+    </main>
+  </body>
+</html>
