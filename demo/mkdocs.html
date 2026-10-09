@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="fb-theme" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MkDocs Material adapter demo</title>
+    <link rel="stylesheet" href="../src/forging-blocks-core.css">
+    <link rel="stylesheet" href="../src/forging-blocks-mkdocs.css">
+    <link rel="stylesheet" href="../src/forging-blocks-mermaid.css">
+    <style>
+      html, body { min-height: 100%; margin: 0; font: 16px/1.6 Roboto, "Segoe UI", sans-serif; }
+      .md-container { display: grid; grid-template-columns: 13rem minmax(0, 1fr) 12rem; min-height: 100vh; }
+      .md-header { grid-column: 1 / -1; padding: 1rem 1.25rem; }
+      .md-header__inner { display: flex; justify-content: space-between; align-items: center; }
+      .md-header__title { font-size: 1.25rem; }
+      .md-tabs { grid-column: 1 / -1; padding: .75rem 1.25rem; }
+      .md-tabs__list { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+      .md-sidebar { padding: 1rem; }
+      .md-nav__list { list-style: none; margin: 0; padding: 0; }
+      .md-nav__link { display: block; padding: .4rem .6rem; text-decoration: none; }
+      .md-content { padding: 1.5rem clamp(1rem, 4vw, 4rem); }
+      .md-source__repository { display: inline-block; padding: .35rem .6rem; text-decoration: none; }
+      .highlighttable { width: 100%; border-collapse: collapse; }
+      .highlighttable td { padding: .5rem; vertical-align: top; }
+      @media (max-width: 60rem) { .md-container { grid-template-columns: 11rem minmax(0, 1fr); } .md-sidebar--secondary { display: none; } }
+      @media (max-width: 42rem) { .md-container { display: block; } .md-sidebar { border: 0; } }
+    </style>
+  </head>
+  <body>
+    <header class="md-header">
+      <div class="md-header__inner">
+        <a class="md-header__title" href="#content"><span class="md-header__topic">Material-shaped docs</span></a>
+        <label class="md-search"><input class="md-search__input" type="search" placeholder="Search documentation"></label>
+      </div>
+    </header>
+    <nav class="md-tabs" aria-label="Primary tabs">
+      <ul class="md-tabs__list">
+        <li class="md-tabs__item md-tabs__item--active"><a class="md-tabs__link" href="#content" aria-selected="true">Guide</a></li>
+        <li class="md-tabs__item"><a class="md-tabs__link" href="#api">API</a></li>
+      </ul>
+    </nav>
+
+    <div class="md-container">
+      <aside class="md-sidebar md-sidebar--primary">
+        <div class="md-sidebar__inner">
+          <div class="md-nav__source"><a href="#content">Project source</a></div>
+          <nav class="md-nav md-nav--primary" aria-label="Navigation">
+            <ul class="md-nav__list">
+              <li class="md-nav__item md-nav__item--section"><a class="md-nav__link" href="#content">Getting started</a></li>
+              <li class="md-nav__item"><a class="md-nav__link md-nav__link--active" href="#content" aria-current="page">Theme overview</a></li>
+              <li class="md-nav__item"><a class="md-nav__link" href="#api">API reference</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main id="content" class="md-content">
+        <article class="md-typeset">
+          <p class="md-source__repository"><a href="#content">Source repository</a></p>
+          <h1>Material adapter fixture</h1>
+          <p>This static page exercises the <a href="#api">Material-shaped shell</a> and its documentation content surfaces.</p>
+          <h2 id="api">API reference</h2>
+          <p>Use <code>adapter.render()</code> to produce the documented output.</p>
+          <pre><code>adapter = ThemeAdapter()
+adapter.render("warm dark")</code></pre>
+
+          <table><thead><tr><th>Token</th><th>Value</th></tr></thead><tbody><tr><td>Background</td><td>Root surface</td></tr><tr><td>Accent</td><td>Orange and yellow</td></tr></tbody></table>
+          <blockquote>Material owns layout and the adapter owns the visual treatment.</blockquote>
+
+          <div class="admonition note"><p class="admonition-title">Note</p><p>Admonitions retain their bordered, square visual language.</p></div>
+          <details class="example" open><summary>Example</summary><p>Generic mkdocstrings details use the note geometry.</p></details>
+          <details class="quote" open><summary>Source quote</summary><pre><code>return rendered_source</code></pre></details>
+
+          <table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><pre><code>def render():
+    return "fixture"</code></pre></td></tr></tbody></table>
+        </article>
+      </main>
+
+      <aside class="md-sidebar md-sidebar--secondary">
+        <div class="md-sidebar__inner">
+          <nav class="md-nav md-nav--secondary" aria-label="On this page">
+            <a class="md-nav__link md-nav__link--active" href="#api">API reference</a>
+            <a class="md-nav__link" href="#content">Overview</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
