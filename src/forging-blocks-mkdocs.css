@@ -1,0 +1,321 @@
+:root {
+  --md-primary-bg-color: var(--fb-accent-orange);
+  --md-primary-fg-color: var(--fb-fg-primary);
+  --md-primary-fg-color--light: var(--fb-accent-yellow);
+  --md-primary-fg-color--dark: var(--fb-fg-muted);
+
+  --md-default-bg-color: var(--fb-bg-root);
+  --md-default-fg-color: var(--fb-fg-primary);
+}
+
+html,
+body {
+  background-color: var(--fb-bg-root) !important;
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-header {
+  background-color: var(--fb-accent-orange) !important;
+  border-bottom: 1px solid var(--fb-border);
+}
+
+.md-header,
+.md-header__inner,
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-header__button.md-icon,
+.md-header__link,
+.md-header a {
+  color: var(--fb-fg-primary) !important;
+  fill: var(--fb-fg-primary) !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.md-header a:hover,
+.md-header__button:hover,
+.md-header__title:hover,
+.md-header__topic:hover {
+  color: var(--fb-accent-yellow) !important;
+  fill: var(--fb-accent-yellow) !important;
+}
+
+.md-search__input {
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-search__input::placeholder {
+  color: var(--fb-fg-muted) !important;
+}
+
+.md-tabs {
+  background-color: var(--fb-bg-root) !important;
+  border-bottom: 1px solid var(--fb-border);
+}
+
+.md-tabs__link {
+  color: var(--fb-accent-yellow-strong) !important;
+}
+
+.md-tabs__link:hover {
+  color: var(--fb-accent-yellow) !important;
+}
+
+.md-tabs__link[aria-selected="true"],
+.md-tabs__item--active > .md-tabs__link {
+  color: var(--fb-accent-yellow-strong) !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--md-primary-fg-color--light) !important;
+}
+
+.md-sidebar--primary,
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--primary .md-sidebar__inner {
+  background-color: var(--fb-bg-root) !important;
+  border-right: 1px solid var(--fb-border);
+}
+
+.md-nav__source,
+.md-nav__title--site,
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  background-color: var(--fb-accent-orange) !important;
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-nav__source *,
+.md-nav__title--site * {
+  color: var(--fb-fg-primary) !important;
+  fill: var(--fb-fg-primary) !important;
+}
+
+.md-nav__source::before,
+.md-nav__source::after,
+.md-nav__title--site::before,
+.md-nav__title--site::after {
+  background: none !important;
+}
+
+.md-nav__item--section > .md-nav__link {
+  color: var(--fb-accent-orange) !important;
+  font-weight: 600;
+}
+
+.md-nav__link,
+.md-nav.md-nav--secondary .md-nav__title {
+  color: var(--fb-fg-soft) !important;
+  background-color: unset !important;
+  box-shadow: unset !important;
+}
+
+.md-nav__link:hover {
+  background-color: var(--fb-bg-hover) !important;
+  color: var(--fb-accent-yellow) !important;
+}
+
+.md-nav__link[aria-current="page"],
+.md-nav__link--active {
+  background-color: var(--fb-bg-hover) !important;
+  color: var(--fb-accent-yellow) !important;
+}
+
+.md-sidebar--secondary,
+.md-sidebar--secondary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__inner,
+.md-nav--secondary {
+  background-color: var(--fb-bg-root) !important;
+  border-left: 1px solid var(--fb-border);
+}
+
+.md-nav--secondary .md-nav__link {
+  color: var(--fb-fg-muted) !important;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  color: var(--fb-accent-yellow) !important;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--fb-accent-orange) !important;
+  font-weight: 600;
+}
+
+.md-content,
+.md-typeset {
+  background-color: var(--fb-bg-root) !important;
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-typeset p:not(.highlight p),
+.md-typeset li:not(.highlight li) {
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-typeset h1 {
+  color: var(--fb-accent-orange) !important;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h2 {
+  margin-top: 1rem;
+}
+
+.md-typeset a {
+  color: var(--fb-accent-orange-dark) !important;
+}
+
+.md-typeset pre {
+  background-color: var(--fb-bg-surface) !important;
+  border: 1px solid var(--fb-border);
+}
+
+.md-typeset pre code {
+  background: transparent !important;
+}
+
+.md-typeset code:not(pre code) {
+  background-color: var(--fb-bg-hover);
+  color: var(--fb-accent-yellow);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+.md-typeset table {
+  background-color: var(--fb-bg-root) !important;
+  border: 1px solid var(--fb-border);
+}
+
+.md-typeset th {
+  background-color: var(--fb-bg-surface) !important;
+  color: var(--fb-fg-primary) !important;
+}
+
+.md-typeset td {
+  color: var(--fb-fg-muted) !important;
+}
+
+.md-typeset blockquote {
+  border-left: 4px solid var(--fb-accent-orange);
+  background-color: var(--fb-bg-surface);
+  color: var(--fb-fg-primary);
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border: 3px solid var(--fb-accent-orange);
+  background-color: var(--fb-bg-surface);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.md-typeset .admonition.note .admonition-title,
+.md-typeset .details.note .summary,
+.md-typeset details.note > summary {
+  background-color: var(--fb-bg-hover);
+  color: var(--fb-accent-orange);
+  padding-left: 0.6rem;
+  font-weight: 600;
+}
+
+.md-typeset .admonition.note .admonition-title::before,
+.md-typeset .details.note > .summary::before,
+.md-typeset details.note > summary::before {
+  content: none;
+}
+
+/* Auto-generated docstring section details (e.g. details.example) */
+.md-typeset details:not(.quote) {
+  border: 3px solid var(--fb-accent-orange);
+  background-color: var(--fb-bg-surface);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.md-typeset details:not(.quote) > summary {
+  background-color: var(--fb-bg-hover);
+  color: var(--fb-accent-orange);
+  padding-left: 0.6rem;
+  font-weight: 600;
+}
+
+.md-typeset details:not(.quote) > summary::before {
+  content: none;
+}
+
+.md-typeset details:not(.quote) > summary::marker {
+  color: var(--fb-accent-orange);
+}
+
+/* Source code quote details */
+.md-typeset details.quote {
+  border: 1px solid var(--fb-border);
+  background-color: var(--fb-bg-root);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.md-typeset details.quote > summary {
+  background-color: var(--fb-bg-surface);
+  color: var(--fb-fg-muted);
+  padding-left: 0.6rem;
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
+.md-typeset details.quote > summary::before {
+  content: none;
+}
+
+/* Source code table (highlighttable) and mkdocstrings blocks */
+.md-typeset .highlighttable {
+  border: 1px solid var(--fb-border);
+}
+
+.md-typeset .highlighttable .linenos {
+  background-color: var(--fb-bg-surface);
+}
+
+.md-typeset .highlighttable .linenodiv pre {
+  color: var(--fb-fg-muted);
+}
+
+.md-typeset .doc-object {
+  color: var(--fb-fg-primary);
+}
+
+.md-sidebar--primary > .md-nav__list > .md-nav__link,
+.md-sidebar--secondary > .md-nav__list > .md-nav__link {
+  background-color: unset !important;
+  box-shadow: unset !important;
+}
+
+.md-sidebar__inner .md-ellipsis,
+.md-sidebar__inner .md-nav .md-nav__title {
+  background-color: var(--fb-bg-root) !important;
+}
+
+.md-content .md-icon {
+  fill: var(--fb-accent-orange-dark) !important;
+}
+
+.md-icon svg,
+.md-source__repository .md-source__repository--active {
+  fill: var(--fb-bg-root) !important;
+  color: var(--fb-bg-root) !important;
+}
+
+.md-source__repository {
+  background-color: var(--fb-accent-orange) !important;
+  color: var(--fb-bg-root) !important;
+}
+.md-source__repository a {
+  color: inherit !important;
+}
+html .md-typeset p.md-source__repository {
+  color: var(--fb-bg-root) !important;
+}
+
+/* Opt-in helper when replacing Material's built-in version selector with fb-floating-menu */
+.fb-hide-md-version .md-header .md-version {
+  display: none !important;
+}
